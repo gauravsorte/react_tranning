@@ -1,0 +1,11 @@
+.name_form_grp_div{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+
+.first_name_clear_feild_btn{
+    position: absolute;
+    top: 22%;
+    left: 45%;
+    border: none;
+}

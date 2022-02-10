@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    background: rgb(157, 196, 241);
+    /* background: rgb(198, 133, 228); */
+
+}
+
+.hidden{
+    display: none;
+}
+
+.form_{
+    position: relative;
+    /* top: 20%;
+    left: 40%; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 700px !important;
+    /* background-color: aqua; */
+    /* border: 5px solid rgba(0, 0, 0, 0.5); */
+    padding: 20px;
+    background: transparent;
+    /* text-align: center; */
+   
+}
+
+.form_group{
+    margin-top: 60px;
+    align-items: center;
+    /* background-color: aqua; */
+    font-size: 30px;
+}
+
+.title_{
+    position: absolute;
+    left: 35%;
+    right: auto;
+    font-size: 50px;
+}
+
+#Email_:hover, #Password_:hover{
+    border: 2px solid rgb(248, 161, 175);
+}
+/* #Password_:hover{
+    border: 2px solid rgb(187, 227, 240);
+
+} */
+
+.email_label, .password_label{
+    font-size: 20px;
+}
+
+.button_formgrp{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.input_label{
+    margin-top: 30px;
+}
+
+.input_feilds{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.clear_feild_btn{
+    position: absolute;
+    right: 5%;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.clear_feild_btn:hover .cross{
+    font-size: 40px;
+    top: -50%;
+    color: red;
+}
+
+.cross{
+    position: absolute;
+    top: -25%;
+    left: 10%;
+    background-color: transparent;
+}
+
+.error_message{
+    color: red;
+}
+
+.submit_button{
+    position: relative;
+    margin-top: 20px;
+    right: 0;
+    background-color: aqua;
+    font-size: 20px !important;
+    width: 40%;
+    margin: 10px;
+    color: violet;
+}

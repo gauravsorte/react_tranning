@@ -1,0 +1,22 @@
+.navbar{
+    background: white !important;
+    font-size: 20px;
+    color: #000 !important;
+    margin-bottom: 30px;
+    margin: 5px 30px 20px 20px;
+    border: 5px solid rgba(0, 0, 0, 0.4);
+}
+
+.nav_brand{
+    font-size: 40px !important;
+    color: black;
+}
+
+.logout_btn{
+    background: red !important;
+}
+
+.logout_btn:hover{
+    background: rgb(161, 2, 2) !important;
+    /* border: 5px solid rgba(0, 0, 0, 0.4); */
+}
