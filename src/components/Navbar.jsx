@@ -42,8 +42,8 @@ function navbar(props) {
                         navbar
                     >
                         <NavItem>
-                            <NavLink href="/components/">
-                                Project
+                            <NavLink href="/users">
+                                Users
                             </NavLink>
                         </NavItem>
                         

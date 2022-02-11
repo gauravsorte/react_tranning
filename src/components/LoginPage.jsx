@@ -8,11 +8,13 @@ import {
 } from 'reactstrap'
 
 import * as yup from 'yup';
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { Routes, Route, Link, Outlet, Navigate, useNavigate } from "react-router-dom";
+import {userDataInitiate, userDataSuccess, userDataFailure} from '../redux/users/action' 
 
 
 
 import '../CSS/loginPage.css'
+import { useDispatch } from 'react-redux';
 
 
 const loginScheme = yup.object().shape({
@@ -93,6 +95,8 @@ function LoginPage(props) {
   // let [password, setPassword] = useState("");
   // let [response, setResponse] = useState('');
   // let [error, setError] = useState(false)
+  // const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   let [state, dispatch] = useReducer(reducer, initialState)
 
@@ -102,7 +106,8 @@ function LoginPage(props) {
   useEffect(() => {
     if (response === 200) {
       // console.log('>>>>>>>>>>>>>>>>>>>>>>>> Success');
-      props.onLoginSuccess();
+      navigate('/users')
+      // props.onLoginSuccess();
     }
   }, [response])
 

@@ -1,0 +1,111 @@
+.user_details_div{
+    margin-top: 150px;
+    /* background-color: red; */
+    height: auto;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.user_name{
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+
+.details_div{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr;
+    /* align-items:center; */
+    margin-left: 0;
+    background: transparent;
+}
+
+.user_image{
+    height: 150px !important;
+}
+
+.sub_details_div{
+    margin-left: 10px;
+    background: transparent;
+
+}
+
+.user_id, .user_email {
+    font-size: 20px;
+}
+
+.id, .email{
+    font-weight: 900
+}
+
+
+.loader{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);   
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+
+    }
+}
+
+.loader:before{
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: rgb(157, 196, 241);
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.loader:after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);   
+    border-radius: 50%;
+    z-index: 1000;
+    z-index: 1;
+    filter: blur(-30px);
+
+}
+/* @keyframes loader{
+    0%{
+        transform: translate(0, 0);
+        transform: rotate(0deg);
+        border-color: rgb(245, 77, 77);
+
+    } 
+    50%{
+        transform: translate(0, 100px);
+        transform: rotate(180deg);
+        border-color: rgb(88, 88, 238);
+        
+    }
+    100%{
+        transform: translate(0, 0);
+        transform: rotate(360deg);
+        border-color: rgb(22, 235, 22);
+
+    }
+} */

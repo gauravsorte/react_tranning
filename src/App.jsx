@@ -7,18 +7,19 @@ import ProjectCard from "./components/ProjectCard";
 import LoginPage from './components/LoginPage';
 import Navbar from './components/Navbar'
 import SignUpPage from './components/signUpPage';
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { Routes, Route, Link, Outlet, useNavigate } from "react-router-dom";
+import UserDetails from './views/UserDetails'
+import { useSelector } from 'react-redux';
 
 function App() {
 
   let [showLoginPage, setShowLoginPage] = useState(true)
-  let [showSignUpPage, setShowSignUpPage] = useState(false)
+  const state = useSelector((state) => state);
+  console.log(state);
 
-  let users__ = null;
+  const navigate = useNavigate()
 
-  let title = showLoginPage ? 'Login' : 'Project'
 
-  const togglePage = () => setShowLoginPage(!showLoginPage)
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
@@ -26,53 +27,31 @@ function App() {
       setShowLoginPage(false)
     }
   }, [])
-  // console.log('>>>>>>>>>>> ',users.data[0]);
-
-  const showLoginInPage = () => {
-    setShowLoginPage(true)
-  }
-  const onLoginSuccess = () => {
-    setShowLoginPage(false)
-    localStorage.setItem('isLoggedIn', true)
-  }
 
   const onLogOut = () => {
     console.log('login failed >>>>>>>>>>>>>> ');
+    navigate('/login')
     setShowLoginPage(true)
     localStorage.removeItem('isLoggedIn')
   }
 
 
 
-  const showSignupPage_ = () => {
-    setShowSignUpPage(true)
-  }
 
   // console.log(users.data[0].email);
 
 
+
   return (
     <Container>
-      {/* <h1>Hello world</h1> */}
-      {/* <Navbar onLogout = {onLogOut} showLoginPage = {showLoginPage}/>
-      <h1>{title}</h1>
-      <Button onClick={togglePage}>Change Page </Button>
-
-      {showLoginPage ? (
-        showSignUpPage ?  (<SignUpPage showLoginPage = {showLoginInPage}/>) : (<LoginPage onLoginSuccess={onLoginSuccess} onLoginFail = {onLogOut} showSignUp = {showSignupPage_}/>) 
-      // <LoginPage onLoginSuccess={onLoginSuccess} onLoginFail = {onLogOut} shoeSignUp = {showSiginupPage_}/>
-      
-      ) :
-        (<div>
-          <ProjectCard />
-        </div>)
-      } */}
+ 
 
       <Routes>
         <Route path='/' element={<div><Navbar onLogout={onLogOut} /><Outlet /></div>}>
           <Route path='/login' element={<LoginPage />}></Route>
           <Route path='/signup' element={<SignUpPage />}></Route>
-
+          <Route path='/users' element={<ProjectCard />}></Route>
+          <Route path='/users/details/:userId' element={<UserDetails />}></Route>
 
         </Route>
       </Routes>
